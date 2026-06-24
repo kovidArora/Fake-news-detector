@@ -3,13 +3,15 @@ import streamlit as st
 import os
 
 
-from rag.news_loader import fetch_news
+# from rag.news_loader import fetch_news
 from rag.vector_store import create_vectorstore
 from rag.retriever import retrieve
 from llm.detector import analyze_news
-print ("hello")
-import newsapi
-print("NEWSAPI INSTALLED")  
+import pkgutil
+import streamlit as st
+
+st.write("Installed packages:")
+st.write([m.name for m in pkgutil.iter_modules() if "news" in m.name.lower()])  
 
 
 st.title("Fake News Detector")
