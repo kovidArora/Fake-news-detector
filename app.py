@@ -1,4 +1,4 @@
-   
+
 import streamlit as st
 import os
 
@@ -73,8 +73,12 @@ if st.button("Analyze"):
 
         if label == "REAL":
             st.success(f"✅ {label}")
-        else:
+
+        elif label == "FAKE":
             st.error(f"❌ {label}")
+
+        else:
+            st.warning(f"⚠️ {label}")
 
 
         st.metric(
