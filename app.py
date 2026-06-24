@@ -1,7 +1,7 @@
    
 import streamlit as st
 import os
-from dotenv import load_dotenv
+
 
 from rag.news_loader import fetch_news
 from rag.vector_store import create_vectorstore
@@ -9,7 +9,6 @@ from rag.retriever import retrieve
 from llm.detector import analyze_news
 
 
-load_dotenv()
 
 st.title("Fake News Detector")
 
@@ -30,7 +29,7 @@ if st.button("Analyze"):
         query = " ".join(news.split()[:4])
 
         docs = fetch_news(
-            os.getenv("NEWS_API_KEY"),
+            st.secrets("NEWS_API_KEY"),
             query
             )
 
