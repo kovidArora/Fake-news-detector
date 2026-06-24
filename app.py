@@ -7,7 +7,9 @@ from rag.news_loader import fetch_news
 from rag.vector_store import create_vectorstore
 from rag.retriever import retrieve
 from llm.detector import analyze_news
-
+print ("hello")
+import newsapi
+print("NEWSAPI INSTALLED")  
 
 
 st.title("Fake News Detector")
